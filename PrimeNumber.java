@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class PrimeNumber {
 
 	public static void main(String[] args) {
-//		flagging
 		int flag=0;
-//		scanner
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("enter your number");
 			int Number = scan.nextInt();
@@ -15,7 +13,6 @@ public class PrimeNumber {
 				System.out.println("is not a prime");
 			}
 			else {
-//				for loop
 				for (int i = 2; i <=m; i++) {
 					if (Number%i == 0) {
 						System.out.println("not a prime");

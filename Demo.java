@@ -1,34 +1,45 @@
 import java.util.Scanner;   
-public class Demo  
-{   
-public static void main(String args[])   
-{   
-int m, n, i, j;   
-Scanner sc=new Scanner(System.in);   
-System.out.print("Enter the number of rows: ");   
-//taking row as input  
-m = sc.nextInt();   
-System.out.print("Enter the number of columns: ");   
-//taking column as input  
-n = sc.nextInt();   
-// Declaring the two-dimensional matrix   
-int array[][] = new int[m][n];   
-// Read the matrix values   
-System.out.println("Enter the elements of the array: ");   
-//loop for row  
-for (i = 0; i < m; i++)   
-//inner for loop for column  
-for (j = 0; j < n; j++)   
-array[i][j] = sc.nextInt();   
-//accessing array elements   
-System.out.println("Elements of the array are: ");   
-for (i = 0; i < m; i++)   
-{   
-for (j = 0; j < n; j++)   
-//prints the array elements  
-System.out.print(array[i][j] + " ");   
-//throws the cursor to the next line  
-System.out.println();   
-}   
-}   
+public class Demo  {   
+	public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter total numbers in array!!!");
+        int n = scan.nextInt();
+        int[] array=new int[n];
+        System.out.println("Elements in the array : ");
+
+        for(int i=0;i<n;i++){
+            array[i]=scan.nextInt();
+           // System.out.println(array[i]);
+        }
+        Triples(array,n);
+
+    }
+    static void Triples(int[] arr, int n)
+    {
+        boolean flag = false;
+        for (int i=0; i<n-2; i++)
+        {
+            for (int j=i+1; j<n-1; j++)
+            {
+                for (int k=j+1; k<n; k++)
+                {
+                    if (arr[i]+arr[j]+arr[k] == 0)
+                    {
+                        System.out.print(arr[i]);
+                        System.out.print(" ");
+                        System.out.print(arr[j]);
+                        System.out.print(" ");
+                        System.out.print(arr[k]);
+                        System.out.print("\n");
+                        flag = true;
+                    }
+                }
+            }
+        }
+
+
+        if (flag == false)
+            System.out.println(" not exist ");
+
+    }
 }  
